@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заказа наряда с фотографиями</title>
+</head>
+<body>
+
+    <h1>Форма заказа наряда</h1>
+
+    <form action="/submit_order" method="post" enctype="multipart/form-data">
+        <label for="client_name">Имя клиента:</label>
+        <input type="text" id="client_name" name="client_name" required><br>
+
+        <label for="service_type">Тип услуги:</label>
+        <select id="service_type" name="service_type" required>
+            <option value="maintenance">Техническое обслуживание</option>
+            <option value="repair">Ремонт</option>
+            <option value="installation">Установка</option>
+        </select><br>
+
+        <label for="description">Описание работ:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+
+        <label for="photos">Прикрепите фотографии (максимум 5):</label><br>
+        <input type="file" id="photos" name="photos[]" accept="image/*" multiple><br>
+
+        <input type="submit" value="Отправить заказ">
+    </form>
+
+</body>
+</html>
